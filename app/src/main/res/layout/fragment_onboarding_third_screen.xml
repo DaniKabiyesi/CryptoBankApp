@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".onboarding.screens.FirstScreen">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thirdOnboardingImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/third_image_onboarding"
+        app:layout_constraintBottom_toTopOf="@+id/firstTextThirdScreenOnboarding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.studying.cryptobankapp.utils.customview.AccessButton
+        android:id="@+id/firstAccessButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:button_text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondTextThirdScreenOnboarding" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firstTextThirdScreenOnboarding"
+        style="@style/FirstCustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_text_third_screen_onboarding"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/secondTextThirdScreenOnboarding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdOnboardingImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/secondTextThirdScreenOnboarding"
+        style="@style/SecondCustomTextView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/second_screen_second_text_onboarding"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/firstAccessButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstTextThirdScreenOnboarding" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
