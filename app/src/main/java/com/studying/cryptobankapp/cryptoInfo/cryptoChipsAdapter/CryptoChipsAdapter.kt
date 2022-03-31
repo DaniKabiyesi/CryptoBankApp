@@ -22,7 +22,7 @@ class CryptoChipsAdapter(
 
     override fun onBindViewHolder(holder: CryptoChipsAdapter.CryptoChipsViewHolder, position: Int) {
         val chips = cryptoChips[position]
-        holder.chipsList.setFifthCryptoChip(chips.fifthCryptoChips)
+        holder.chipsList.setFirstCryptoChip(chips.firstCryptoChips)
         holder.chipsList.setSecondCryptoChip(chips.secondCryptoChips)
         holder.chipsList.setThirdCryptoChip(chips.thirdCryptoChips)
         holder.chipsList.setFourthCryptoChip(chips.fourthCryptoChips)

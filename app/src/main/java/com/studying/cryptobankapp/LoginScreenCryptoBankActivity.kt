@@ -17,12 +17,14 @@ class LoginScreenCryptoBankActivity : AppCompatActivity() {
         nextScreen()
     }
 
+
+
     private fun nextScreen(){
         binding.run {
             accessButton.setOnClickListener {
                 val intent = Intent(
                     this@LoginScreenCryptoBankActivity,
-                    CryptoCoinInfoActivity::class.java
+                    HomeScreenCryptoBankActivity::class.java
                 )
                 startActivity(intent)
             }

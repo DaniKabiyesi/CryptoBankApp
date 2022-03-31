@@ -1,9 +1,12 @@
 package com.studying.cryptobankapp
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.studying.cryptobankapp.R
+import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoins
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoin
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoinsAdapter
 import com.studying.cryptobankapp.databinding.ActivityHomeScreenCryptoBankBinding

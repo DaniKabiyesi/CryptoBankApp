@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.studying.cryptobankapp.R
 import com.studying.cryptobankapp.databinding.AccessCryptoCoinsBinding
 
 class AccessCryptoCoins @JvmOverloads constructor(
@@ -14,25 +15,20 @@ class AccessCryptoCoins @JvmOverloads constructor(
 
     private val binding = AccessCryptoCoinsBinding.inflate(LayoutInflater.from(context), this, true)
 
-    private var state: CryptoCoinsState = CryptoCoinsState.IsNotFavorite
+    var listener: AccessCryptoCoinClickListener? = null
 
     init {
-        refreshState()
-    }
-
-    private fun refreshState() {
-        binding.favoriteIconImageView.isEnabled = state.favorite
-        refreshDrawableState()
+        binding.favoriteIconImageView.setOnClickListener {
+            listener?.setClickListener()
+        }
     }
 
     fun setIsFavorite() {
-        state = CryptoCoinsState.IsFavorite
-        refreshState()
+        binding.favoriteIconImageView.setBackgroundResource(R.drawable.is_favorite)
     }
 
     fun setIsNotFavorite() {
-        state = CryptoCoinsState.IsNotFavorite
-        refreshState()
+        binding.favoriteIconImageView.setBackgroundResource(R.drawable.is_not_favorite)
     }
 
     fun setCoinsName(cryptoName: String) {
@@ -43,8 +39,12 @@ class AccessCryptoCoins @JvmOverloads constructor(
         binding.cryptoCountTextView.text = cryptoRanking
     }
 
-    open class CryptoCoinsState(val favorite: Boolean) {
-        object IsNotFavorite : CryptoCoinsState(true)
-        object IsFavorite : CryptoCoinsState(false)
-    }
+//    open class CryptoCoinsState(val favorite: Boolean) {
+//        object IsNotFavorite : CryptoCoinsState(true)
+//        object IsFavorite : CryptoCoinsState(false)
+//    }
+}
+
+interface AccessCryptoCoinClickListener{
+    fun setClickListener()
 }
