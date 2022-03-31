@@ -20,8 +20,6 @@ class CryptoChipsAdapter(
         return CryptoChipsViewHolder(cryptoView)
     }
 
-
-
     override fun onBindViewHolder(holder: CryptoChipsAdapter.CryptoChipsViewHolder, position: Int) {
         val chips = cryptoChips[position]
         holder.chipsList.setFifthCryptoChip(chips.fifthCryptoChips)

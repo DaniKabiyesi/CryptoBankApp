@@ -13,7 +13,6 @@ class CryptoTeamsAdapter(
     private val cryptoTeams: MutableList<CryptoTeams>,
 ) : RecyclerView.Adapter<CryptoTeamsAdapter.CryptoTeamsViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoTeamsViewHolder {
         val cryptoView = LayoutInflater.from(context).inflate(R.layout.teams_list, parent, false)
         return CryptoTeamsViewHolder(cryptoView)

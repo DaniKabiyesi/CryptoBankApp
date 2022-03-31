@@ -22,7 +22,7 @@ class LoginScreenCryptoBankActivity : AppCompatActivity() {
             accessButton.setOnClickListener {
                 val intent = Intent(
                     this@LoginScreenCryptoBankActivity,
-                    HomeScreenCryptoBankActivity::class.java
+                    CryptoCoinInfoActivity::class.java
                 )
                 startActivity(intent)
             }
