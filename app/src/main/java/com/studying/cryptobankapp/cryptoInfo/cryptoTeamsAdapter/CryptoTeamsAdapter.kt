@@ -20,8 +20,8 @@ class CryptoTeamsAdapter(
 
     override fun onBindViewHolder(holder: CryptoTeamsViewHolder, position: Int) {
         val teams = cryptoTeams[position]
-        holder.teamsList.setTittle(teams.tittle)
-        holder.teamsList.setSubTittle(teams.subTittle)
+        teams.tittle?.let { holder.teamsList.setTittle(it) }
+        teams.subTittle?.let { holder.teamsList.setSubTittle(it) }
         teams.line?.let { holder.teamsList.setLine(it) }
     }
 

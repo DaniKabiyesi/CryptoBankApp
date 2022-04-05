@@ -1,14 +1,10 @@
 package com.studying.cryptobankapp
 
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import com.studying.cryptobankapp.R
-import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoins
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoin
-import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoinsAdapter
 import com.studying.cryptobankapp.cryptoHome.setUpRecyclerView
 import com.studying.cryptobankapp.databinding.ActivityHomeScreenCryptoBankBinding
 import com.studying.cryptobankapp.utils.customview.lists.cryptoCoinsCollection
@@ -16,29 +12,73 @@ import com.studying.cryptobankapp.utils.customview.lists.cryptoCoinsCollection
 class HomeScreenCryptoBankActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeScreenCryptoBankBinding
+    private lateinit var dialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenCryptoBankBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initRecyclerView()
-        initOptionMenu()
+        initRecyclerView(myCoinsList())
+//        initOptionMenu()
+        showDialogBinding()
+        setFavoritesFilter()
+        setAllFilter()
 
     }
 
-    private fun initRecyclerView() {
+
+    private fun showDialogBinding(){
+       with(binding.toolbar){
+           this.inflateMenu(R.menu.crypto_menu)
+           menu.findItem(R.id.action_go_back).setOnMenuItemClickListener {
+               showAlertDialog()
+           false}
+       }
+    }
+
+    private fun showAlertDialog(){
+        val build = AlertDialog.Builder(this, R.style.ThemeMyDialog)
+        val view = layoutInflater.inflate(R.layout.custom_alert_dialog,null)
+        build.setView(view)
+
+        val btnCancel = view.findViewById<Button>(R.id.cancelButton)
+        btnCancel.setOnClickListener { dialog.dismiss()}
+
+        val leaveButton = view.findViewById<Button>(R.id.leaveButton)
+        leaveButton.setOnClickListener {
+            finish()
+        }
+
+        dialog = build.create()
+        dialog.show()
+    }
+
+    private fun initRecyclerView(list: List<CryptoCoin>) {
         val cryptoList: MutableList<CryptoCoin> = mutableListOf()
-        cryptoList.addAll(cryptoCoinsCollection)
+        cryptoList.addAll(list)
         setUpRecyclerView(binding, cryptoList)
     }
 
-    private fun initOptionMenu() {
-        with(binding.toolbar) {
-            this.inflateMenu(R.menu.crypto_menu)
-            menu.findItem(R.id.action_exit).setOnMenuItemClickListener {
-                Toast.makeText(this@HomeScreenCryptoBankActivity, "teste", Toast.LENGTH_SHORT)
-                    .show()
-                true
+    private fun myCoinsList(): List<CryptoCoin> {
+        return if (cryptoCoinsCollection.any { it.favorite }) { // i need to change the lists
+            cryptoCoinsCollection.filter { it.favorite }
+        } else {
+            cryptoCoinsCollection
+        }
+    }
+
+    private fun setFavoritesFilter() {
+        binding.run {
+            onlyFavoriteButton.setOnClickListener {
+                initRecyclerView(myCoinsList())
+            }
+        }
+    }
+
+    private fun setAllFilter() {
+        binding.run {
+            allButton.setOnClickListener {
+                initRecyclerView(cryptoCoinsCollection)
             }
         }
     }

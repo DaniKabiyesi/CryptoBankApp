@@ -16,9 +16,6 @@
             android:name=".HomeScreenCryptoBankActivity"
             android:exported="false" />
         <activity
-            android:name="com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoinsAdapter"
-            android:exported="false" />
-        <activity
             android:name=".SignUpScreenCryptoBankActivity"
             android:exported="false" />
         <activity

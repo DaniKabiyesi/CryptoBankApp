@@ -15,6 +15,8 @@ class CryptoCoinsAdapter(
     private val cryptoCoins: MutableList<CryptoCoin>,
 ) : RecyclerView.Adapter<CryptoCoinsAdapter.CryptoCoinsViewHolder>() {
 
+    var notify : CryptoCoinAdapterInterface? = null
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -39,7 +41,7 @@ class CryptoCoinsAdapter(
             }
 
             override fun setCardViewImplementation() {
-                startCoinInfo(context, coins)
+                notify?.notifyActivity(coins)
             }
         }
     }
@@ -51,4 +53,8 @@ class CryptoCoinsAdapter(
             itemView.findViewById(R.id.listAccessCryptoCoin)
     }
 
+}
+
+interface CryptoCoinAdapterInterface{
+    fun notifyActivity(coin: CryptoCoin)
 }

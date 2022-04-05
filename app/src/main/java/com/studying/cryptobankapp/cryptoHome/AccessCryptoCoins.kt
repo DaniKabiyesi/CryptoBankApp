@@ -29,7 +29,6 @@ class AccessCryptoCoins @JvmOverloads constructor(
         binding.favoriteIconImageView.setBackgroundResource(R.drawable.is_not_favorite)
     }
 
-
     fun clickCardViewListener() {
         binding.favoriteIconImageView.setOnClickListener {
             listener?.setFavoriteState()
@@ -47,10 +46,6 @@ class AccessCryptoCoins @JvmOverloads constructor(
         binding.cryptoCountTextView.text = cryptoRanking
     }
 
-//    open class CryptoCoinsState(val favorite: Boolean) {
-//        object IsNotFavorite : CryptoCoinsState(true)
-//        object IsFavorite : CryptoCoinsState(false)
-//    }
 }
 
 

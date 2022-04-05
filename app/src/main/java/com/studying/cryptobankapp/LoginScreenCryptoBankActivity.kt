@@ -16,58 +16,31 @@ class LoginScreenCryptoBankActivity : AppCompatActivity() {
         binding = ActivityLoginScreenCryptoBankBinding.inflate(layoutInflater)
         setContentView(binding.root)
         nextScreen()
+        signUpScreen()
     }
 
 
-//    private fun loginScreen() {
-//        binding.run {
-//            if(accessLoginEditText.text.toString().isNotBlank() && )
-//
-//
-//
-//
-////            accessButton.setOnClickListener {
-////                when {
-////                    accessLoginEditText.toString().isNotBlank()-> {
-////                        val intent = Intent(
-////                            this@LoginScreenCryptoBankActivity,
-////                            HomeScreenCryptoBankActivity::class.java
-////                        )
-////                        startActivity(intent)
-////                    }
-////                    accessButton.text && accessPasswordEditText.toString()
-////                        .isBlank() -> {
-////                        Toast.makeText(this@LoginScreenCryptoBankActivity,
-////                            "teste",
-////                            Toast.LENGTH_SHORT).show()
-////                    }
-////                    accessLoginEditText.toString().isBlank() && accessPasswordEditText.toString()
-////                        .isBlank() -> {
-////                        Toast.makeText(this@LoginScreenCryptoBankActivity,
-////                            "teste",
-////                            Toast.LENGTH_SHORT)
-////                            .show()
-////                    }
-////                    accessLoginEditText.toString().isBlank() && accessPasswordEditText.toString()
-////                        .isBlank() -> {
-////                        Toast.makeText(this@LoginScreenCryptoBankActivity,
-////                            "this",
-////                            Toast.LENGTH_SHORT)
-////                            .show()
-////                    }
-////                }
-////            }
-//        }
-//    }
-
-//
     private fun nextScreen() {
         binding.run {
             accessButton.setOnClickListener {
-                val intent = Intent(
-                    this@LoginScreenCryptoBankActivity,
-                    HomeScreenCryptoBankActivity::class.java
-                )
+                if (accessLoginEditText.isValid() && accessPasswordEditText.isValid()) {
+                    val intent = Intent(
+                        this@LoginScreenCryptoBankActivity,
+                        HomeScreenCryptoBankActivity::class.java
+                    )
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this@LoginScreenCryptoBankActivity, "teste", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        }
+    }
+
+    private fun signUpScreen() {
+        binding.run {
+            createAccountButton.setOnClickListener {
+                val intent = Intent(this@LoginScreenCryptoBankActivity, SignUpScreenCryptoBankActivity::class.java)
                 startActivity(intent)
             }
         }

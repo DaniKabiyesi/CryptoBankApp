@@ -4,8 +4,8 @@ import android.graphics.drawable.Drawable
 import java.io.Serializable
 
 data class CryptoTeams(
-    val tittle: String,
-    val subTittle: String,
+    val tittle: String?,
+    val subTittle: String?,
     val line: Drawable?
 ) : Serializable {
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,68 +7,75 @@
     android:background="@color/app_color"
     tools:context=".LoginScreenCryptoBankActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/logoImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:src="@drawable/logo_login_app"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/logo_login_app"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.studying.cryptobankapp.utils.customview.AccessEditText
-        android:id="@+id/accessPasswordEditText"
-        android:layout_width="293dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        app:change_hint="Password"
-        app:inputType="textPassword"
-        app:is_password="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImage" />
+        <com.studying.cryptobankapp.utils.customview.AccessEditText
+            android:id="@+id/accessPasswordEditText"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            app:change_hint="Password"
+            app:inputType="textPassword"
+            app:is_password="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoImage" />
 
-    <com.studying.cryptobankapp.utils.customview.AccessEditText
-        android:id="@+id/accessLoginEditText"
-        android:layout_width="293dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        app:change_hint="Login"
-        app:inputType="text"
-        app:is_password="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImage" />
+        <com.studying.cryptobankapp.utils.customview.AccessEditText
+            android:id="@+id/accessLoginEditText"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            app:change_hint="Login"
+            app:inputType="text"
+            app:is_password="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoImage" />
 
-    <com.studying.cryptobankapp.utils.customview.AccessButton
-        android:id="@+id/accessButton"
-        android:layout_width="293dp"
-        android:layout_marginTop="270dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:button_text="Access"
-        app:layout_constraintTop_toBottomOf="@+id/logoImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="593dp" />
+        <com.studying.cryptobankapp.utils.customview.AccessButton
+            android:id="@+id/accessButton"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="270dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:button_text="Access"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoImage"
+            tools:layout_editor_absoluteY="593dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:fontFamily="@font/roboto"
-        android:text="Create a new account"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accessButton" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAccountButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto"
+            android:text="Create a new account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accessButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

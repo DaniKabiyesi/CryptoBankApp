@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/drawable/app_background.xml" value="0.12" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/drawable/favorite_drawable.xml" value="0.12" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.12" />
+        <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.122" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/drawable/is_favorite.xml" value="0.1215" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/access_button.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/access_crypto_chips.xml" value="0.16983695652173914" />
@@ -25,10 +26,12 @@
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/activity_splash_screen_crypto_bank.xml" value="0.22" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/chips_list.xml" value="0.25" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/coins_list.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/custom_alert_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/fragment_onboarding_first_screen.xml" value="0.22" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/fragment_onboarding_second_screen.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/fragment_onboarding_third_screen.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/layout/teams_list.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/menu/crypto_coin_info_menu.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/Dani_Kab1yesi/AndroidStudioProjects/CryptoBankApp/app/src/main/res/menu/crypto_menu.xml" value="0.20729166666666668" />
       </map>
     </option>

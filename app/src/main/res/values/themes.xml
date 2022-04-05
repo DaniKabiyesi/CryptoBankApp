@@ -15,9 +15,9 @@
     </style>
 
     <style name="FirstCustomTextView" parent="android:TextAppearance.DeviceDefault">
-            <item name="android:textColor">#FFFFFF</item>
-            <item name="android:fontFamily">@font/actor</item>
-            <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/actor</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="SecondCustomTextView" parent="android:TextAppearance.DeviceDefault">
@@ -25,5 +25,11 @@
         <item name="android:fontFamily">@font/actor</item>
         <item name="android:textStyle">normal</item>
 
+    </style>
+
+    <style name="ThemeMyDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Primary brand color. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 </resources>

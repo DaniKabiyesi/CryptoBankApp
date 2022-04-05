@@ -35,10 +35,15 @@ class AccessEditText @JvmOverloads constructor(
                 attribute.getString(R.styleable.AccessEditText_change_hint)
             this.binding.accessHintEditText.inputType =
                 attribute.getType(R.styleable.AccessEditText_inputType)
-//            this.binding.accessHintEditText.text =
-//                attribute.getString(R.styleable.AccessEditText_text) as Editable?
             attribute.recycle()
         }
+
     }
+    fun isValid() : Boolean {
+        return this.binding.accessHintEditText.text!!.isNotEmpty()
+
+    }
+
+
 
 }
