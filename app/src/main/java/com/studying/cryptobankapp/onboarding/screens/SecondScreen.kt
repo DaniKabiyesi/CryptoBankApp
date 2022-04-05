@@ -33,7 +33,7 @@ class SecondScreen : Fragment() {
     private fun nextScreen(){
         binding.run {
             firstAccessButton.setOnClickListener {
-                findNavController().navigate(R.id.thirdScreen)
+                findNavController().navigate(R.id.action_secondScreen_to_thirdScreen)
             }
         }
     }

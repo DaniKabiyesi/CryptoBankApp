@@ -1,6 +1,7 @@
 package com.studying.cryptobankapp.utils.customview
 
 import android.content.Context
+import android.text.Editable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +22,7 @@ class AccessEditText @JvmOverloads constructor(
     }
 
     private fun setLayout(attrs: AttributeSet?) {
-        attrs?.let { attrs ->
+        attrs?.let {
             val attribute = context.obtainStyledAttributes(
                 attrs,
                 R.styleable.AccessEditText
@@ -29,11 +30,13 @@ class AccessEditText @JvmOverloads constructor(
             setBackgroundResource(R.drawable.access_edit_text)
 
             this.binding.inputTextInputLayout.isPasswordVisibilityToggleEnabled =
-                attribute.getBoolean(R.styleable.AccessEditText_is_password, true)
+                attribute.getBoolean(R.styleable.AccessEditText_is_password, false)
             this.binding.accessHintEditText.hint =
                 attribute.getString(R.styleable.AccessEditText_change_hint)
             this.binding.accessHintEditText.inputType =
                 attribute.getType(R.styleable.AccessEditText_inputType)
+//            this.binding.accessHintEditText.text =
+//                attribute.getString(R.styleable.AccessEditText_text) as Editable?
             attribute.recycle()
         }
     }

@@ -18,9 +18,7 @@ class AccessCryptoCoins @JvmOverloads constructor(
     var listener: AccessCryptoCoinClickListener? = null
 
     init {
-        binding.favoriteIconImageView.setOnClickListener {
-            listener?.setClickListener()
-        }
+        clickCardViewListener()
     }
 
     fun setIsFavorite() {
@@ -29,6 +27,16 @@ class AccessCryptoCoins @JvmOverloads constructor(
 
     fun setIsNotFavorite() {
         binding.favoriteIconImageView.setBackgroundResource(R.drawable.is_not_favorite)
+    }
+
+
+    fun clickCardViewListener() {
+        binding.favoriteIconImageView.setOnClickListener {
+            listener?.setFavoriteState()
+        }
+        binding.cryptoButton.setOnClickListener {
+            listener?.setCardViewImplementation()
+        }
     }
 
     fun setCoinsName(cryptoName: String) {
@@ -45,6 +53,8 @@ class AccessCryptoCoins @JvmOverloads constructor(
 //    }
 }
 
-interface AccessCryptoCoinClickListener{
-    fun setClickListener()
+
+interface AccessCryptoCoinClickListener {
+    fun setFavoriteState()
+    fun setCardViewImplementation()
 }

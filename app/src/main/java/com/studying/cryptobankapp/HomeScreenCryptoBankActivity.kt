@@ -9,6 +9,7 @@ import com.studying.cryptobankapp.R
 import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoins
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoin
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoinsAdapter
+import com.studying.cryptobankapp.cryptoHome.setUpRecyclerView
 import com.studying.cryptobankapp.databinding.ActivityHomeScreenCryptoBankBinding
 import com.studying.cryptobankapp.utils.customview.lists.cryptoCoinsCollection
 
@@ -26,13 +27,9 @@ class HomeScreenCryptoBankActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        val recyclerCryptoCoins = binding.buttonRecyclerView
         val cryptoList: MutableList<CryptoCoin> = mutableListOf()
-
         cryptoList.addAll(cryptoCoinsCollection)
-
-        val cryptoAdapter = CryptoCoinsAdapter(this, cryptoList)
-        recyclerCryptoCoins.adapter = cryptoAdapter
+        setUpRecyclerView(binding, cryptoList)
     }
 
     private fun initOptionMenu() {

@@ -13,4 +13,5 @@ class SignUpScreenCryptoBankActivity : AppCompatActivity() {
         binding = ActivitySignUpScreenCryptoBankBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.studying.cryptobankapp.R
 import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoinClickListener
 import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoins
+import com.studying.cryptobankapp.cryptoHome.startCoinInfo
 
 class CryptoCoinsAdapter(
     private val context: Context,
@@ -31,11 +32,14 @@ class CryptoCoinsAdapter(
         } else {
             holder.coinsList.setIsNotFavorite()
         }
-        holder.coinsList.listener = object : AccessCryptoCoinClickListener{
-            override fun setClickListener() {
+        holder.coinsList.listener = object : AccessCryptoCoinClickListener {
+            override fun setFavoriteState() {
                 coins.favorite = !coins.favorite
+                notifyItemChanged(holder.adapterPosition)
+            }
 
-                notifyItemChanged(position)
+            override fun setCardViewImplementation() {
+                startCoinInfo(context, coins)
             }
         }
     }

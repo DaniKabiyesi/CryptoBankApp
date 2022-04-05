@@ -9,12 +9,28 @@
         android:id="@+id/firstScreen"
         android:name="com.studying.cryptobankapp.onboarding.screens.FirstScreen"
         android:label="fragment_first_screen"
-        tools:layout="@layout/fragment_onboarding_first_screen" />
+        tools:layout="@layout/fragment_onboarding_first_screen" >
+        <action
+            android:id="@+id/action_firstScreen_to_secondScreen"
+            app:destination="@id/secondScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/secondScreen"
         android:name="com.studying.cryptobankapp.onboarding.screens.SecondScreen"
         android:label="fragment_second_screen"
-        tools:layout="@layout/fragment_onboarding_second_screen" />
+        tools:layout="@layout/fragment_onboarding_second_screen" >
+        <action
+            android:id="@+id/action_secondScreen_to_thirdScreen"
+            app:destination="@id/thirdScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/thirdScreen"
         android:name="com.studying.cryptobankapp.onboarding.screens.ThirdScreen"

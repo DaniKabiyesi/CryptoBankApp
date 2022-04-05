@@ -29,6 +29,7 @@ class SplashScreenCryptoBankActivity : AppCompatActivity() {
                 CryptoBankOnboardingActivity::class.java
             )
             startActivity(intent)
+            finish()
 
         }, 1600)
     }

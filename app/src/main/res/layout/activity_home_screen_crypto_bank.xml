@@ -16,8 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Welcome"
-        app:titleTextColor="@color/black"
-        />
+        app:titleTextColor="@color/black" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/buttonRecyclerView"
@@ -31,8 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:itemCount="15"
-        tools:listitem="@layout/access_crypto_coins"
-        />
+        tools:listitem="@layout/access_crypto_coins" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="336dp"
@@ -67,24 +65,24 @@
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/roboto"
-            android:textAllCaps="false"
             android:text="Todos"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/onlyFavoriteButton"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/roboto"
-            android:layout_marginStart="180dp"
             android:text="Only Favorites"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
 
     </androidx.cardview.widget.CardView>
