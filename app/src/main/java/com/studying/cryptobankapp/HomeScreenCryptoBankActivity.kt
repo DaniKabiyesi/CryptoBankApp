@@ -1,9 +1,11 @@
 package com.studying.cryptobankapp
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoin
 import com.studying.cryptobankapp.cryptoHome.setUpRecyclerView
 import com.studying.cryptobankapp.databinding.ActivityHomeScreenCryptoBankBinding
@@ -19,7 +21,6 @@ class HomeScreenCryptoBankActivity : AppCompatActivity() {
         binding = ActivityHomeScreenCryptoBankBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView(myCoinsList())
-//        initOptionMenu()
         showDialogBinding()
         setFavoritesFilter()
         setAllFilter()
@@ -27,24 +28,27 @@ class HomeScreenCryptoBankActivity : AppCompatActivity() {
     }
 
 
-    private fun showDialogBinding(){
-       with(binding.toolbar){
-           this.inflateMenu(R.menu.crypto_menu)
-           menu.findItem(R.id.action_go_back).setOnMenuItemClickListener {
-               showAlertDialog()
-           false}
-       }
+    private fun showDialogBinding() {
+        with(binding.toolbar) {
+            setMenuHome()
+            menuGoBackItem().setOnMenuItemClickListener {
+                showAlertDialog()
+                false
+            }
+        }
     }
 
-    private fun showAlertDialog(){
+
+
+    private fun showAlertDialog() {
         val build = AlertDialog.Builder(this, R.style.ThemeMyDialog)
-        val view = layoutInflater.inflate(R.layout.custom_alert_dialog,null)
+        val view = layoutInflater.inflate(R.layout.custom_alert_dialog, null)
         build.setView(view)
 
-        val btnCancel = view.findViewById<Button>(R.id.cancelButton)
-        btnCancel.setOnClickListener { dialog.dismiss()}
+        val btnCancel = setButton(view, (R.id.cancelButton))
+        btnCancel.setOnClickListener { dialog.dismiss() }
 
-        val leaveButton = view.findViewById<Button>(R.id.leaveButton)
+        val leaveButton = setButton(view, (R.id.leaveButton))
         leaveButton.setOnClickListener {
             finish()
         }
@@ -52,6 +56,8 @@ class HomeScreenCryptoBankActivity : AppCompatActivity() {
         dialog = build.create()
         dialog.show()
     }
+
+
 
     private fun initRecyclerView(list: List<CryptoCoin>) {
         val cryptoList: MutableList<CryptoCoin> = mutableListOf()
@@ -81,5 +87,13 @@ class HomeScreenCryptoBankActivity : AppCompatActivity() {
                 initRecyclerView(cryptoCoinsCollection)
             }
         }
+    }
+    private fun setButton(view: View, button: Int) = view.findViewById<Button>(button)
+
+    private fun MaterialToolbar.menuGoBackItem() =
+        menu.findItem(R.id.action_go_back)
+
+    private fun MaterialToolbar.setMenuHome() {
+        this.inflateMenu(R.menu.crypto_menu)
     }
 }

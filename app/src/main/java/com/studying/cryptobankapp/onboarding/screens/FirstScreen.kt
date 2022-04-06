@@ -26,17 +26,21 @@ class FirstScreen : Fragment() {
             container,
             false
         )
-        nextScreen()
+        setListeners()
 
         return binding.root
     }
 
-    private fun nextScreen(){
+    private fun setListeners(){
         binding.run {
             firstAccessButton.setOnClickListener {
-                findNavController().navigate(R.id.action_firstScreen_to_secondScreen)
+                nextScreen()
             }
         }
+    }
+
+    private fun nextScreen() {
+        findNavController().navigate(R.id.action_firstScreen_to_secondScreen)
     }
 
 

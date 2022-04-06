@@ -7,37 +7,40 @@
     android:background="@color/app_color"
     tools:context=".SignUpScreenCryptoBankActivity">
 
-
     <com.studying.cryptobankapp.utils.customview.AccessButton
         android:id="@+id/createAccountButton"
         android:layout_width="293dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="330dp"
         app:button_text="Create Account"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <com.studying.cryptobankapp.utils.customview.AccessEditText
         android:id="@+id/loginEditText"
         android:layout_width="293dp"
+        android:layout_marginTop="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         app:change_hint="Login"
         app:inputType="textEmailAddress"
         app:is_password="false"
+        app:layout_constraintBottom_toTopOf="@+id/cpfEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.studying.cryptobankapp.utils.customview.AccessEditText
         android:id="@+id/cpfEditText"
         android:layout_width="293dp"
-        app:inputType="number"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         app:change_hint="CPF"
+        app:inputType="number"
         app:is_password="false"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginEditText" />
@@ -45,11 +48,12 @@
     <com.studying.cryptobankapp.utils.customview.AccessEditText
         android:id="@+id/passwordEditText"
         android:layout_width="293dp"
-        app:inputType="textPassword"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         app:change_hint="Password"
+        app:inputType="textPassword"
         app:is_password="true"
+        app:layout_constraintBottom_toTopOf="@id/confirmPasswordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cpfEditText" />
@@ -57,11 +61,12 @@
     <com.studying.cryptobankapp.utils.customview.AccessEditText
         android:id="@+id/confirmPasswordEditText"
         android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:change_hint="Confirm Your Password"
         app:inputType="textPassword"
         app:is_password="true"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        app:change_hint="Confirm Your Password"
+        app:layout_constraintBottom_toTopOf="@+id/createAccountButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />

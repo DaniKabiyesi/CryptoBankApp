@@ -1,7 +1,6 @@
 package com.studying.cryptobankapp.utils.customview
 
 import android.content.Context
-import android.text.Editable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -39,11 +38,11 @@ class AccessEditText @JvmOverloads constructor(
         }
 
     }
-    fun isValid() : Boolean {
+
+    fun isValid(): Boolean {
         return this.binding.accessHintEditText.text!!.isNotEmpty()
 
     }
-
 
 
 }

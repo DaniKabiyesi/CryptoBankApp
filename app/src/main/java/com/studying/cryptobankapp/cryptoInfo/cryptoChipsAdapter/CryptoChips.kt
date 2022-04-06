@@ -8,5 +8,5 @@ class CryptoChips(
     val thirdCryptoChips: String,
     val fourthCryptoChips: String,
     val fifthCryptoChips: String,
-) : Serializable{
+) : Serializable {
 }

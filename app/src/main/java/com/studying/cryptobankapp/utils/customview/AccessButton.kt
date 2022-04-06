@@ -10,7 +10,7 @@ import com.studying.cryptobankapp.databinding.AccessButtonBinding
 class AccessButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet?,
-    defStyleAttrs: Int = 0
+    defStyleAttrs: Int = 0,
 ) : ConstraintLayout(context, attrs, defStyleAttrs) {
 
     private val binding = AccessButtonBinding.inflate(LayoutInflater.from(context), this, true)

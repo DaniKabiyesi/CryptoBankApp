@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.studying.cryptobankapp.LoginScreenCryptoBankActivity
-import com.studying.cryptobankapp.R
-import com.studying.cryptobankapp.SplashScreenCryptoBankActivity
 import com.studying.cryptobankapp.databinding.FragmentOnboardingThirdScreenBinding
 
 class ThirdScreen : Fragment() {
@@ -28,18 +25,22 @@ class ThirdScreen : Fragment() {
             container,
             false
         )
-        nextScreen()
+        setListeners()
 
         return binding.root
     }
 
-    private fun nextScreen() {
+    private fun setListeners() {
         binding.run {
             firstAccessButton.setOnClickListener {
-                val intent = Intent(context, LoginScreenCryptoBankActivity::class.java)
+                val intent = goToNextScreen()
                 startActivity(intent)
             }
         }
+    }
+
+    private fun goToNextScreen(): Intent {
+        return Intent(context, LoginScreenCryptoBankActivity::class.java)
     }
 
 }

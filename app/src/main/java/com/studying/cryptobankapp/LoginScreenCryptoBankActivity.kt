@@ -1,10 +1,9 @@
 package com.studying.cryptobankapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.studying.cryptobankapp.cryptoInfo.CryptoCoinInfoActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.studying.cryptobankapp.databinding.ActivityLoginScreenCryptoBankBinding
 
 class LoginScreenCryptoBankActivity : AppCompatActivity() {
@@ -15,36 +14,54 @@ class LoginScreenCryptoBankActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginScreenCryptoBankBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
-        signUpScreen()
+        goToHomeScreen()
+        goToSignUpScreen()
     }
 
 
-    private fun nextScreen() {
+    private fun goToHomeScreen() {
         binding.run {
             accessButton.setOnClickListener {
-                if (accessLoginEditText.isValid() && accessPasswordEditText.isValid()) {
-                    val intent = Intent(
-                        this@LoginScreenCryptoBankActivity,
-                        HomeScreenCryptoBankActivity::class.java
-                    )
+                if (loginValidation()) {
+                    val intent = setHomeScreen()
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@LoginScreenCryptoBankActivity, "teste", Toast.LENGTH_SHORT)
-                        .show()
+                    setLoginValidationToast()
                 }
             }
         }
     }
 
-    private fun signUpScreen() {
+    private fun goToSignUpScreen() {
         binding.run {
             createAccountButton.setOnClickListener {
-                val intent = Intent(this@LoginScreenCryptoBankActivity, SignUpScreenCryptoBankActivity::class.java)
+                val intent = setSignUpScreen()
                 startActivity(intent)
             }
         }
     }
+
+    private fun setSignUpScreen(): Intent {
+        return Intent(this@LoginScreenCryptoBankActivity,
+            SignUpScreenCryptoBankActivity::class.java)
+    }
+
+    private fun setLoginValidationToast() {
+        Toast.makeText(this@LoginScreenCryptoBankActivity, "Fill in all fields", Toast.LENGTH_SHORT)
+            .show()
+    }
+
+    private fun setHomeScreen(): Intent {
+        return Intent(
+            this@LoginScreenCryptoBankActivity,
+            HomeScreenCryptoBankActivity::class.java
+        )
+    }
+
+    private fun ActivityLoginScreenCryptoBankBinding.loginValidation() =
+        accessLoginEditText.isValid() && accessPasswordEditText.isValid()
+
+
 
 
 }

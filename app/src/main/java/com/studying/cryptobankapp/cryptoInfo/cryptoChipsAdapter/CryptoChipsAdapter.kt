@@ -27,12 +27,14 @@ class CryptoChipsAdapter(
         holder.chipsList.setThirdCryptoChip(chips.thirdCryptoChips)
         holder.chipsList.setFourthCryptoChip(chips.fourthCryptoChips)
         holder.chipsList.setFifthCryptoChip(chips.fifthCryptoChips)
+
     }
 
     override fun getItemCount(): Int = cryptoChips.size
 
-    inner class CryptoChipsViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-        val chipsList: AccessCryptoChips = itemView.findViewById<AccessCryptoChips>(R.id.listAccessCryptoChips)
+    inner class CryptoChipsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val chipsList: AccessCryptoChips =
+            itemView.findViewById<AccessCryptoChips>(R.id.listAccessCryptoChips)
     }
 
 }

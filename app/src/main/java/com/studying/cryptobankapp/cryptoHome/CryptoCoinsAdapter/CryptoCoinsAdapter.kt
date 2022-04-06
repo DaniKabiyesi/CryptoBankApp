@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.studying.cryptobankapp.R
 import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoinClickListener
 import com.studying.cryptobankapp.cryptoHome.AccessCryptoCoins
-import com.studying.cryptobankapp.cryptoHome.startCoinInfo
 
 class CryptoCoinsAdapter(
     private val context: Context,
     private val cryptoCoins: MutableList<CryptoCoin>,
 ) : RecyclerView.Adapter<CryptoCoinsAdapter.CryptoCoinsViewHolder>() {
 
-    var notify : CryptoCoinAdapterInterface? = null
+    var notify: CryptoCoinAdapterInterface? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -55,6 +54,6 @@ class CryptoCoinsAdapter(
 
 }
 
-interface CryptoCoinAdapterInterface{
+interface CryptoCoinAdapterInterface {
     fun notifyActivity(coin: CryptoCoin)
 }

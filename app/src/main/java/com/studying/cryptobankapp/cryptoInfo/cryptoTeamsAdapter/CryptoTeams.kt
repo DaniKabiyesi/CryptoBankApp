@@ -6,6 +6,6 @@ import java.io.Serializable
 data class CryptoTeams(
     val tittle: String?,
     val subTittle: String?,
-    val line: Drawable?
+    val line: Drawable?,
 ) : Serializable {
 }

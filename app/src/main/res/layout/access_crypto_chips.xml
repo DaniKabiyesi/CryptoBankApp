@@ -21,41 +21,46 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/firstChip"
-                android:layout_width="86dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:chipBackgroundColor="@color/access_button" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/secondChip"
-                android:layout_width="86dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:chipBackgroundColor="@color/access_button" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/thirdChip"
-                android:layout_width="86dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:chipBackgroundColor="@color/access_button" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/fourthChip"
-                android:layout_width="86dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:chipBackgroundColor="@color/access_button" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/fifthChip"
-                android:layout_width="86dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:chipBackgroundColor="@color/access_button" />
 

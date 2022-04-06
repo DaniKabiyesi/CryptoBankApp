@@ -3,6 +3,7 @@ package com.studying.cryptobankapp.cryptoInfo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 import com.studying.cryptobankapp.HomeScreenCryptoBankActivity
 import com.studying.cryptobankapp.R
 import com.studying.cryptobankapp.cryptoHome.CryptoCoinsAdapter.CryptoCoin
@@ -22,12 +23,11 @@ class CryptoCoinInfoActivity : AppCompatActivity() {
         setContentView(binding.root)
         val data = intent.extras
         val coin = data?.getSerializable("coin")
-        initInterface(coin as CryptoCoin)
-//        cryptoCoinInfoData()
+        initMyCoinInfo(coin as CryptoCoin)
         initOptionMenu(coin)
     }
 
-    private fun initInterface(coin: CryptoCoin) {
+    private fun initMyCoinInfo(coin: CryptoCoin) {
         setCryptoChipsAdapter(coin)
         setCryptoTeamsAdapter(coin)
         setDescription(coin)
@@ -41,15 +41,24 @@ class CryptoCoinInfoActivity : AppCompatActivity() {
 
     private fun initOptionMenu(coin: CryptoCoin) {
         with(binding.toolbar) {
-            inflateMenu(R.menu.crypto_coin_info_menu)
-            title = coin.cryptoName
+            setMenuCoinInfo(coin)
             menu.findItem(R.id.action_go_back).setOnMenuItemClickListener {
-                val intent =
-                    Intent(this@CryptoCoinInfoActivity, HomeScreenCryptoBankActivity::class.java)
-                startActivity(intent)
+                finish()
                 true
             }
         }
+    }
+
+    private fun MaterialToolbar.setMenuCoinInfo(coin: CryptoCoin) {
+        inflateMenu(R.menu.crypto_coin_info_menu)
+        title = coin.cryptoName
+    }
+
+
+    private fun setActivity() {
+        val intent =
+            Intent(this@CryptoCoinInfoActivity, HomeScreenCryptoBankActivity::class.java)
+        startActivity(intent)
     }
 
     private fun setCryptoChipsAdapter(coin: CryptoCoin) {
@@ -71,13 +80,5 @@ class CryptoCoinInfoActivity : AppCompatActivity() {
         val cryptoAdapter = CryptoTeamsAdapter(this, teamsList)
         recyclerCryptoTeams.adapter = cryptoAdapter
     }
-
-//    private fun cryptoCoinInfoData() {
-//        val data = intent.extras
-//        val coin = data?.getSerializable("coin")
-//
-//        binding.descriptionTextView.text = coin.toString()
-//
-//    }
 
 }
