@@ -11,17 +11,15 @@ CryptoBank
   </p>
 <p>
   
-<img  width="40%"  src="https://i.imgur.com/dOUQdq2.jpg">
-<img  width="40%"  src="https://i.imgur.com/vZOLBFt.jpg">
-<img  width="40%"  src="https://i.imgur.com/JMbd1wH.jpg">
-<img  width="40%"  src="https://i.imgur.com/1ZZA4nz.jpg">
-<img  width="40%"  src="https://i.imgur.com/7LNaH63.jpg">
-<img  width="40%"  src="https://i.imgur.com/luUP6wP.jpg">
-<img  width="40%"  src="https://i.imgur.com/cPPYpOz.jpg">
-<img  width="40%"  src="https://i.imgur.com/PpoDoYq.jpg">
-<img  width="40%"  src="https://i.imgur.com/1ZZA4nz.jpg">
-<img  width="40%"  src="https://i.imgur.com/tdFhp28.jpg">
-<img  width="40%"  src="https://i.imgur.com/FFoviAR.jpg">
+<img  width="20%"  src="https://i.imgur.com/dOUQdq2.jpg">
+<img  width="20%"  src="https://i.imgur.com/vZOLBFt.jpg">
+<img  width="20%"  src="https://i.imgur.com/JMbd1wH.jpg">
+<img  width="20%"  src="https://i.imgur.com/7LNaH63.jpg">
+<img  width="20%"  src="https://i.imgur.com/luUP6wP.jpg">
+<img  width="20%"  src="https://i.imgur.com/cPPYpOz.jpg">
+<img  width="20%"  src="https://i.imgur.com/PpoDoYq.jpg">
+<img  width="20%"  src="https://i.imgur.com/tdFhp28.jpg">
+<img  width="20%"  src="https://i.imgur.com/FFoviAR.jpg">
 </div>
 
 ---
